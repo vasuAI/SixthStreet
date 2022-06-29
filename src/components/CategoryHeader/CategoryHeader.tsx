@@ -3,7 +3,7 @@ import Colors from '../../utils/Colors';
 import {normalize} from '../../utils/Dimensions';
 import LocalImages from '../../utils/LocalImages';
 import {StyleSheet, Text, Image, View} from 'react-native';
-import CustomInput from '../customSearch/CustomSearch';
+import CustomInput from '../customSearch/customSearch';
 
 /**
  * @returns

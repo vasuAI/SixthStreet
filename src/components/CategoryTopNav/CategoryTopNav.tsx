@@ -82,10 +82,10 @@ const CustomTopHeader = ({setCardPress}: any) => {
  */
 const styles = StyleSheet.create({
   tabBarContainer: {
-    height: normalize(50),
-    paddingHorizontal: normalize(20),
-    borderBottomWidth: normalize(1),
+    height: normalize(30),
+    marginTop: normalize(5),
     borderBottomColor: Colors.grey,
+    borderBottomWidth: normalize(1),
   },
   tabBarItems: {
     marginBottom: 10,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   bagIconStyle: {
     width: vw(24),
     height: vh(26),
-    top: normalize(10),
+    top: normalize(-2),
     position: 'absolute',
     right: normalize(20),
   },

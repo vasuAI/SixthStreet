@@ -4,7 +4,7 @@ import {View, Image, Text, StyleSheet} from 'react-native';
 
 /**
  *
- * @param {*} param0
+ * @param {*} param
  * @returns
  */
 const CategoryBanner = ({data}: any) => {
@@ -30,7 +30,10 @@ const styles = StyleSheet.create({
     width: normalize(251),
     marginBottom: normalize(20),
   },
-  categoryBannerImage: {height: normalize(200), width: normalize(215)},
+  categoryBannerImage: {
+    height: normalize(200),
+    width: normalize(215),
+  },
   textBannnerStyle: {
     lineHeight: normalize(18),
     fontSize: normalize(13),

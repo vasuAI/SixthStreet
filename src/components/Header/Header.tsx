@@ -2,7 +2,7 @@ import React from 'react';
 import LocalImages from '../../utils/LocalImages';
 import {normalize} from '../../utils/Dimensions';
 import {Colors, Strings} from '../../utils';
-import CustomSearch from '../customSearch/CustomSearch';
+import CustomSearch from '../customSearch/customSearch';
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import TopNavigation from '../../modules/TopTabNaviagtion/TopTabNavigation';
 
