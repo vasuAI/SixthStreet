@@ -54,14 +54,14 @@ const CommonCategoryFlatlist = ({data, Index, setIndex}: any) => {
       <FlatList
         data={data}
         bounces={false}
-        keyExtractor={item => item.key}
+        keyExtractor={item => JSON.stringify(item.key)}
         renderItem={_onRenderSideBar}
         showsVerticalScrollIndicator={false}
       />
       <FlatList
         bounces={false}
         data={data[Index]?.data}
-        keyExtractor={item => item.key + '?'}
+        keyExtractor={item => JSON.stringify(item.key)}
         renderItem={_renderCategoryItem}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.seperatorLine}
