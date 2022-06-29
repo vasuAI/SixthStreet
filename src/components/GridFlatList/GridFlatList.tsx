@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback} from 'react';
 import {normalize} from '../../utils/Dimensions';
 import {View, Text, FlatList, Image, StyleSheet} from 'react-native';
@@ -28,6 +29,7 @@ const GridFlatLIst = ({data}: any) => {
             <Text
               style={[
                 styles.gridCircleItemTitle,
+                // eslint-disable-next-line react-native/no-inline-styles
                 {fontWeight: footer?.subtitle != null ? '600' : '300'},
               ]}>
               {footer?.title}
