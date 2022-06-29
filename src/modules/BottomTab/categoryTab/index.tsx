@@ -1,30 +1,27 @@
 import React, {useState} from 'react';
 import {Colors} from '../../../utils';
 import {StyleSheet, SafeAreaView} from 'react-native';
-import CategoryMen from '../../categoryTabNaviagtion/Men';
-import CategoryKid from '../../categoryTabNaviagtion/Kids';
-import CategoryWomen from '../../categoryTabNaviagtion/Women';
-import CategoryTopHeader from '../../../components/CategoryTopNav';
-import CategoryHeader from '../../../components/CategoryHeader';
+import {Men, Women, Kids} from '../../categoryTabNaviagtion/';
+import {CategoryHeader, CategoryTopNav} from '../../../components';
 
 const Categories = () => {
-  const [cardPress, setCardPress] = useState('Women');
+  const [cardSelected, setCardSelected] = useState('Women');
 
-  const toDisplayScreen = () => {
-    if (cardPress == 'Men') {
-      return <CategoryMen />;
-    } else if (cardPress == 'Women') {
-      return <CategoryWomen />;
-    } else if (cardPress == 'Kid') {
-      return <CategoryKid />;
+  const selectedTab = () => {
+    if (cardSelected === 'Men') {
+      return <Men />;
+    } else if (cardSelected === 'Women') {
+      return <Women />;
+    } else if (cardSelected === 'Kid') {
+      return <Kids />;
     }
   };
 
   return (
     <SafeAreaView style={styles.contentContainer}>
-      <CategoryTopHeader cardPress={cardPress} setCardPress={setCardPress} />
+      <CategoryTopNav cardPress={cardSelected} setCardPress={setCardSelected} />
       <CategoryHeader />
-      {toDisplayScreen()}
+      {selectedTab()}
     </SafeAreaView>
   );
 };

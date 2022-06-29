@@ -1,22 +1,6 @@
-// import {View} from 'react-native';
-// import React, {useEffect} from 'react';
-// import {useDispatch, useSelector} from 'react-redux';
-// import {Colors} from '../../utils';
-// import {categoryKidsAction} from '../../actions/categoryTabAction';
-
-// export default function Kids() {
-//   const dispatch = useDispatch<any>();
-//   useEffect(() => {
-//     dispatch(categoryKidsAction());
-//   }, []);
-//   return <View style={{flex: 1, backgroundColor: Colors.white}}>
-
-//   </View>;
-// }
-
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import CategoryParentFlatlist from '../../components/CategoryParentFlatlist';
+import {CategoryParentFlatlist} from '../../components';
 import {categoryKidsAction} from '../../actions/categoryTabAction';
 
 /**
@@ -31,7 +15,7 @@ const CategoryKids = () => {
 
   useEffect(() => {
     dispatch(categoryKidsAction());
-  }, []);
+  }, [dispatch]);
 
   return (
     <CategoryParentFlatlist Index={Index} setIndex={setIndex} data={data} />

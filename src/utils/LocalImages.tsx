@@ -5,6 +5,7 @@ export default {
   searchIcon: require('../assets/Images/search.png'),
   bellIcon: require('../assets/Images/bell.png'),
   bagIcon: require('../assets/Images/bag.png'),
+  brandIcon: require('../assets/Images/brand.png'),
   starIcon: require('../assets/Images/star.png'),
   accountIcon: require('../assets/Images/account.png'),
   headerLogo: require('../assets/Images/headerLogo.png'),

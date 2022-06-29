@@ -1,11 +1,11 @@
 import {FlatList} from 'react-native';
 import React, {useCallback} from 'react';
 import SliderBanner from '../SliderBanner';
-import GridFlatList from '../GridFlatList';
+import GridFlatList from '../gridFlatList';
 import ItemSeperator from '../ItemSeperator';
 import StoryFlatList from '../StoryFlatlist';
-import BannerFlatList from '../BannerFlatList';
-import FullWidthSlider from '../FullWidthSlider';
+import BannerFlatList from '../bannerFlatList';
+import FullWidthSlider from '../fullWidthSlider';
 import BannerTypes from '../../utils/BannerTypes';
 
 const HomeParentFlatlist = (props: any) => {
@@ -13,29 +13,29 @@ const HomeParentFlatlist = (props: any) => {
     data: {data},
   } = props;
 
-  const onRenderFlatlist = useCallback(
-    ({item}: any): any => {
-      const {type, items, header, tag, title, index} = item;
+  const onRenderFlatlist = useCallback(({item}: any): any => {
+    const {type, items, header, tag, title} = item;
 
-      switch (type) {
-        case BannerTypes.circleSlider:
-          return <StoryFlatList data={items} />;
-        case BannerTypes.banner:
-          return <BannerFlatList data={items} header={header} tag={tag} />;
-        case BannerTypes.grid:
-          return <GridFlatList data={item} header={header} />;
-        case BannerTypes.bannerSlider: {
+    switch (type) {
+      case BannerTypes.circleSlider:
+        return <StoryFlatList data={items} />;
+      case BannerTypes.banner:
+        return <BannerFlatList data={items} header={header} tag={tag} />;
+      case BannerTypes.grid:
+        return <GridFlatList data={item} header={header} />;
+      case BannerTypes.bannerSlider:
+        // eslint-disable-next-line no-lone-blocks
+        {
           <SliderBanner data={item} title={title ?? 'NA'} tag={tag} />;
         }
-        case BannerTypes.lineSeperator:
-          return <ItemSeperator />;
-        case BannerTypes.fullBannerSlider:
-          return <FullWidthSlider data={items} />;
-        default:
-      }
-    },
-    [data],
-  );
+        break;
+      case BannerTypes.lineSeperator:
+        return <ItemSeperator />;
+      case BannerTypes.fullBannerSlider:
+        return <FullWidthSlider data={items} />;
+      default:
+    }
+  }, []);
   return (
     <FlatList
       data={data}
@@ -51,4 +51,3 @@ const HomeParentFlatlist = (props: any) => {
  * @exports
  */
 export default React.memo(HomeParentFlatlist);
-null;

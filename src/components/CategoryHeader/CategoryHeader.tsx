@@ -3,7 +3,7 @@ import Colors from '../../utils/Colors';
 import {normalize} from '../../utils/Dimensions';
 import LocalImages from '../../utils/LocalImages';
 import {StyleSheet, Text, Image, View} from 'react-native';
-import CustomInput from '../../components/customSearch/customSearch';
+import CustomInput from '../customSearch/CustomSearch';
 
 /**
  * @returns
@@ -19,13 +19,13 @@ const CategoryHeader = () => {
           placeholderTextColor="grey"
         />
       </View>
-      <View style={styles.categoryBrandView}>
-        <View style={styles.categoryView}>
+      <View style={styles.brandIconCointainer}>
+        <View style={styles.categoryLabelView}>
           <Image style={styles.categoryImage} source={LocalImages.bagIcon} />
           <Text style={styles.categoryText}>{'Categories'}</Text>
         </View>
         <View style={styles.brandTextView}>
-          <Image style={styles.brandImage} source={LocalImages.bellIcon} />
+          <Image style={styles.brandImage} source={LocalImages.brandIcon} />
           <Text style={styles.brandsText}>{'Brands'}</Text>
         </View>
       </View>
@@ -39,42 +39,42 @@ const CategoryHeader = () => {
 const styles = StyleSheet.create({
   textInputStyle: {
     width: '60%',
-    height: normalize(35),
-    marginLeft: normalize(7),
+    height: normalize(37),
+    marginLeft: normalize(5),
   },
   iconStyle: {
     opacity: 0.5,
-    width: normalize(17),
-    height: normalize(17),
-    marginLeft: normalize(10),
+    width: normalize(18),
+    height: normalize(18),
+    marginLeft: normalize(8),
   },
   textInputView: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: normalize(110),
+    width: normalize(100),
     height: normalize(35),
     borderRadius: normalize(10),
     backgroundColor: Colors.grey,
   },
   headerContainer: {
     flexDirection: 'row',
-    padding: normalize(10),
-    marginLeft: normalize(7),
+    padding: normalize(8),
+    marginLeft: normalize(8),
     justifyContent: 'space-between',
   },
-  categoryView: {
+  categoryLabelView: {
     alignItems: 'center',
     flexDirection: 'row',
-    width: normalize(110),
-    height: normalize(27),
+    width: normalize(120),
+    height: normalize(28),
     borderRadius: normalize(20),
     backgroundColor: Colors.black,
     justifyContent: 'space-around',
   },
-  categoryBrandView: {
+  brandIconCointainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: normalize(190),
+    alignContent: 'flex-start',
     justifyContent: 'space-around',
     marginHorizontal: normalize(10),
   },

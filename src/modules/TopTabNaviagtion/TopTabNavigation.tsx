@@ -1,8 +1,6 @@
 import React from 'react';
 import {Colors, ScreenNames} from '../../utils';
-import Men from '../../modules/homeTopTabScreens/Men';
-import Kids from '../../modules/homeTopTabScreens/Kids';
-import Women from '../../modules/homeTopTabScreens/Women';
+import {Kids, Men, Women} from '../../modules/homeTopTabScreens';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 const Tab = createMaterialTopTabNavigator();

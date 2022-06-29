@@ -2,8 +2,8 @@ import React from 'react';
 import Colors from '../../utils/Colors';
 import {normalize} from '../../utils/Dimensions';
 import BannerTypes from '../../utils/BannerTypes';
-import CategoryGrid from '../../components/CategoryGridFlatlist';
-import CategoryBanner from '../../components/CategoryBannerFlatlist';
+import CategoryGrid from '../categoryGridFlatlist';
+import CategoryBanner from '../categoryBannerFlatlist';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 /**
@@ -15,7 +15,7 @@ const CommonCategoryFlatlist = ({data, Index, setIndex}: any) => {
   const onPressButton = (index: any) => {
     setIndex(index);
   };
-  const onRenderLeftFlatlist = ({item, index}: any) => {
+  const _onRenderSideBar = ({item, index}: any) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
@@ -28,21 +28,25 @@ const CommonCategoryFlatlist = ({data, Index, setIndex}: any) => {
           },
         ]}>
         <Text
-          style={{
-            fontSize: normalize(10),
-            fontWeight: '500',
-            color: Index == index ? 'white' : item.design.text_color,
-          }}>
+          style={[
+            styles.textStyle,
+            // eslint-disable-next-line react-native/no-inline-styles
+            {color: Index === index ? 'white' : item.design.text_color},
+          ]}>
           {item?.label.toUpperCase()}
         </Text>
       </TouchableOpacity>
     );
   };
 
-  const _renderItem = ({item}: any): any => {
-    if (item?.type == BannerTypes.banner) return <CategoryBanner data={item} />;
-    else if (item?.type == BannerTypes.grid)
-      return <CategoryGrid data={item} />;
+  const _renderCategoryItem = ({item}: any): any => {
+    const {type} = item;
+    switch (type) {
+      case BannerTypes.banner:
+        return <CategoryBanner data={item} />;
+      case BannerTypes.grid:
+        return <CategoryGrid data={item} />;
+    }
   };
 
   return (
@@ -51,14 +55,14 @@ const CommonCategoryFlatlist = ({data, Index, setIndex}: any) => {
         data={data}
         bounces={false}
         keyExtractor={item => item.key}
-        renderItem={onRenderLeftFlatlist}
+        renderItem={_onRenderSideBar}
         showsVerticalScrollIndicator={false}
       />
       <FlatList
         bounces={false}
         data={data[Index]?.data}
-        // keyExtractor={item =>item}
-        renderItem={_renderItem}
+        keyExtractor={item => item.key + '?'}
+        renderItem={_renderCategoryItem}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.seperatorLine}
       />
@@ -75,10 +79,15 @@ const styles = StyleSheet.create({
     width: normalize(130),
     height: normalize(40),
     padding: normalize(10),
+    justifyContent: 'center',
   },
   seperatorLine: {
     borderLeftWidth: 0.3,
     borderLeftColor: 'grey',
+  },
+  textStyle: {
+    fontSize: normalize(10),
+    fontWeight: '500',
   },
 });
 
