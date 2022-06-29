@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     padding: normalize(8),
-    marginLeft: normalize(8),
+    marginLeft: normalize(15),
     justifyContent: 'space-between',
   },
   categoryLabelView: {
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: normalize(120),
     height: normalize(28),
+    marginRight: normalize(20),
     borderRadius: normalize(20),
     backgroundColor: Colors.black,
     justifyContent: 'space-around',
@@ -81,12 +82,11 @@ const styles = StyleSheet.create({
   brandTextView: {
     alignItems: 'center',
     flexDirection: 'row',
-    width: normalize(70),
+    width: normalize(80),
     height: normalize(27),
     borderRadius: normalize(20),
     backgroundColor: Colors.grey,
     justifyContent: 'space-around',
-    paddingHorizontal: normalize(4),
   },
   categoryText: {
     fontWeight: 'bold',
