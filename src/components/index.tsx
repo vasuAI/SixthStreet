@@ -4,7 +4,6 @@ import ItemSeperator from './ItemSeperator';
 import CategoryHeader from './categoryHeader';
 import CategoryTopNav from './categoryTopNav';
 import BannerFlatList from './bannerFlatList';
-import customSearch from './customSearch/CustomSearch';
 import CategoryGridFlatlist from './categoryGridFlatlist';
 import StoryFlastlist from './StoryFlatlist/StoryFlatlist';
 import categoryTab from '../modules/BottomTab/categoryTab';
@@ -17,7 +16,6 @@ export {
   Header,
   categoryTab,
   GridFlatList,
-  customSearch,
   ItemSeperator,
   CategoryHeader,
   StoryFlastlist,

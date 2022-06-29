@@ -6,7 +6,7 @@ import {TextInput} from 'react-native';
   @param {} props
  * @returns
  */
-const CustomSearch = (props: any) => {
+const CustmSearch = (props: any) => {
   const {value, placeholder, onChange, inputStyle, placeholderTextColor} =
     props;
   return (
@@ -23,4 +23,4 @@ const CustomSearch = (props: any) => {
 /**
  * @exports
  */
-export default React.memo(CustomSearch);
+export default React.memo(CustmSearch);

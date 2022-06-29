@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback} from 'react';
 import {normalize} from '../../utils/Dimensions';
 import {StyleSheet, Text, FlatList, Image} from 'react-native';
