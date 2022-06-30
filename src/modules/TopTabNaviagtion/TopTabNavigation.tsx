@@ -13,6 +13,7 @@ function TopNavigation() {
     <Tab.Navigator
       backBehavior="history"
       screenOptions={{
+        swipeEnabled: false,
         tabBarIndicatorStyle: {backgroundColor: Colors.black},
         lazy: true,
       }}>

@@ -30,6 +30,7 @@ const BannerFlatList = (props: any) => {
     [data],
   );
 
+  // eslint-disable-next-line no-shadow
   const bannerCustomStyle = (height: number, tag: String) => {
     if (height === 125) {
       return styles.bannerStripImage;

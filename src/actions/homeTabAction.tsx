@@ -6,14 +6,10 @@ import WebServices from '../utils/WebServices';
  * @returns Home Mens Action
  */
 const homeMenAction = () => {
-  console.log('homeMenAction');
-
   return (dispatch: {type: any; payload: any}) => {
     WebServices.getApiCall(
       EndPoint.HOME_MEN,
       (successCallback: any) => {
-        console.log('successCallback', successCallback);
-
         dispatch({
           type: 'MEN_DATA',
           payload: successCallback.data.data,
@@ -30,8 +26,6 @@ const homeWomenAction = () => {
     WebServices.getApiCall(
       EndPoint.HOME_WOMEN,
       (successCallback: any) => {
-        console.log('successCallback', successCallback);
-
         dispatch({
           type: 'WOMEN_DATA',
           payload: successCallback.data.data,
@@ -48,8 +42,6 @@ const homeKidsAction = () => {
     WebServices.getApiCall(
       EndPoint.HOME_KIDS,
       (successCallback: any) => {
-        console.log('successCallback', successCallback);
-
         dispatch({
           type: 'KIDS_DATA',
           payload: successCallback.data.data,

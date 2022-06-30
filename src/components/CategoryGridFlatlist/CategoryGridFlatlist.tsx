@@ -8,10 +8,10 @@ import {StyleSheet, Text, View, FlatList, Image} from 'react-native';
  * @param {*} param0
  * @returns
  */
-const CategoryGrid = ({data}) => {
+const CategoryGrid = ({data}: any) => {
   const {title, items} = data;
   const onRenderGrid = useCallback(
-    ({item}) => {
+    ({item}: any) => {
       return (
         <View style={styles.renderDataContainer}>
           <Image
@@ -22,6 +22,7 @@ const CategoryGrid = ({data}) => {
         </View>
       );
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [data],
   );
 

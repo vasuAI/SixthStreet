@@ -10,8 +10,6 @@ const categoryMenAction = () => {
     WebServices.getApiCall(
       EndPoint.CATEGORY_MEN,
       (successCallback: any) => {
-        console.log('successCallback', successCallback);
-
         dispatch({
           type: 'MEN_CATEGORY_DATA',
           payload: successCallback.data.data,
@@ -31,8 +29,6 @@ const categoryWomenAction = () => {
     WebServices.getApiCall(
       EndPoint.CATEGORY_WOMEN,
       (successCallback: any) => {
-        console.log('successCallback', successCallback);
-
         dispatch({
           type: 'WOMEN_CATEGORY_DATA',
           payload: successCallback.data.data,
@@ -49,8 +45,6 @@ const categoryKidsAction = () => {
     WebServices.getApiCall(
       EndPoint.CATEGORY_KIDS,
       (successCallback: any) => {
-        console.log('successCallback', successCallback);
-
         dispatch({
           type: 'KIDS_CATEGORY_DATA',
           payload: successCallback.data.data,
